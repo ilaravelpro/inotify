@@ -1,0 +1,40 @@
+{
+    "name": "ilaravel/inotify",
+    "description": "iLaravel iNotify",
+    "keywords": [
+        "laravel",
+        "notify",
+        "notification",
+        "alert"
+    ],
+    "homepage": "https://ilaravel.iamir.net/packages/inotify",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "iamirnet",
+            "email": "me@iamir.net",
+            "homepage": "https://iamir.net",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src"
+        "psr-4": {
+            "iLaravel\\iNotify\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "iLaravel\\iNotify\\Providers\\AppServiceProvider",
+                "iLaravel\\iNotify\\Providers\\RouteServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
