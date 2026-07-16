@@ -17,7 +17,7 @@ class NotifyMessage extends Resource
     {
         $data = parent::toArray($request);
         if ($request->has("is_me")) {
-            if ($user = $this->resource->users->where("pivot.user_id", auth()->id())->first()) {
+            if ($user = $this->resource->users->where("pivot.user_id", auth()->id())->where("pivot.view_count", ">", 0)->first()) {
                 $data["status"] = "viewed";
                 $data["read_at"] = format_datetime($user->getOriginal("pivot_read_at"), $this->resource->datetime??[], "created_at", ipreference('lang'));
             }else {
